@@ -1,0 +1,35 @@
+footer {
+    width: 100vw;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 0;
+    background-color: rgb(67, 67, 67);
+    
+}
+
+.footer_row0 {
+    height: 30px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer_row1 {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: white;
+    /* text-decoration: none; */
+}
