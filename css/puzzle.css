@@ -4,13 +4,38 @@ body {
     background-color: white;
 }
 
+.container_wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.container_wrapper > .left_side_container, .container, .right_side_container  {
+    margin-right: 20px;
+}
+
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 40px;
     padding: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.container h2 {
+    display: inline-block;
+    margin-top: -4px;
+}
+
+.container small {
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .puzzle-container {
@@ -21,7 +46,26 @@ body {
 
 .puzzle-letter {
     width: 40px;
-    height: 40px;
+    height: 36px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 20px;
+}
+
+.user_ranking {
+    margin-top: 8px;
+    width: 20vw;
+    height: 41vh;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 20px;    
+}
+
+.word_list {
+    width: 20vw;
+    height: 43vh;
     line-height: 40px;
     text-align: center;
     border: 1px solid #ccc;
