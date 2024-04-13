@@ -20,24 +20,29 @@ startButtonSelector.addEventListener('click', ()=> {
     popupSelector.style.display = "none";
     document.body.style.backgroundColor = "white";
     gameStart();
+    
 });
 
 function popupSet() {
     popupSelector.style.backgroundColor = "white";
     document.body.style.backgroundColor = "gray";
+    setUserRanking(userNickNames, userRecords);
 }
 
 function gameStart() {
+    placeWordList(words);
+    createPuzzleGrid(words)
     setInterval(() => {
         seconds = seconds+ 1;
         timerSelector.textContent = String(seconds).padStart(2,"0");
-    }, 1000);                                                                                                                                                                                                  
+    }, 1000);
 }
 
 function placeWordList(words) {
     for (let i = 0; i < words.length; i++) {
         const newDivElement = document.createElement('div');
         newDivElement.innerHTML = words[i];
+        newDivElement.className = "words-array";
         wordListSelector.appendChild(newDivElement);
     }
 }
@@ -105,7 +110,53 @@ function setUserRanking() {
     }
 }
 
+let userDragData = "";
+let puzzleLetterSelectors = document.querySelectorAll(".puzzle-letter");
+
+puzzleLetterSelectors.forEach(draggable => {
+    draggable.addEventListener('dragenter', (event) => {
+        console.log("drag start: " + event.target.innerHTML);
+        event.target.classList.add(event.target.innerHTML);
+        event.target.style.backgroundColor = "pink";
+    })
+});
+
+puzzleLetterSelectors.forEach(draggable => {
+    draggable.addEventListener('dragleave', (event) => {
+        console.log("drag leave: " + event.target.innerHTML);
+        event.target.classList.add(event.target.innerHTML);
+        event.target.style.backgroundColor = "pink";
+        userDragData += event.target.innerHTML;
+        console.log("userDragData: " + userDragData);
+        checkPuzzleAnswer(userDragData);  
+    })
+});
+
+function checkPuzzleAnswer(userDragData) {
+    let answer = "";
+    // puzzle-letter className div를 드래그 하는 이벤트를 발생시킨다
+    // 이벤트가 발생된 div의 색을 변경한다
+    // 이벤트가 종료되는 div까지 innerText를 변수에 저장한다 => 결과값
+    // 결과값 데이터와 words 배열에 들어있는 값이 같으면 정답이라고 표시해준다
+    // 결과값 데이터와 words 배열에 들어있는 값이 다르면 오답이라고 표시해준다
+
+    for (let i = 0; i < words.length; i++) {
+        if (userDragData == words[i]) {
+            alert("정답");
+            answer = words[i];
+            break;
+        } else {
+            alert("오답");
+            break;
+        }
+    }
+
+    const wordsArrays = document.querySelectorAll(".words-array");
+    for (let i = 0; i < wordsArrays.length; i++) {
+        if (answer == wordsArrays[i].innerHTML) {
+            wordsArrays[i].innerHTML.style.backgroundColor = "gray";
+        }
+    }
+}
+
 popupSet();
-createPuzzleGrid(words);
-placeWordList(words);
-setUserRanking(userNickNames, userRecords);
