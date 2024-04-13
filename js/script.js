@@ -1,3 +1,7 @@
+// DB반영전 테스트를 위한 mock data
+const userNickNames = ["물결의황색위습", "소리없는검", "라일락", "fireballdead"];
+const userRecords = [30, 25, 25, 31];
+
 const words = ["LEONARD", "HOWARD", "PENNY", "AMY", "THEORY", "RAJESH", "SHELDON", "SCIENCE", "PHYSICS", "COMICBOOK"];
 const puzzleContainer = document.getElementById("puzzle-container");
 let wordListSelector = document.querySelector(".word_list");
@@ -5,6 +9,7 @@ let timerSelector = document.querySelector(".timer");
 let popupSelector = document.querySelector(".puzzle_popup");
 let startButtonSelector  = document.querySelector(".game_start");
 let exitButtonSelector = document.querySelector(".game_exit");
+let userRankingSelector = document.querySelector(".user_ranking");
 let seconds = 1;
 
 exitButtonSelector.addEventListener('click', ()=> {
@@ -20,7 +25,6 @@ startButtonSelector.addEventListener('click', ()=> {
 function popupSet() {
     popupSelector.style.backgroundColor = "white";
     document.body.style.backgroundColor = "gray";
-
 }
 
 function gameStart() {
@@ -91,6 +95,17 @@ function getRandomAlphabet() {
     return alphabet[Math.floor(Math.random() * alphabet.length)];
 }
 
+function setUserRanking() {
+    let rank = 1;
+    for (let i = 0; i < userNickNames.length; i++) {
+        const divElement = document.createElement('div');
+        divElement.innerHTML = rank + " " + userNickNames[i] + " " + userRecords[i] + "초";
+        userRankingSelector.appendChild(divElement);
+        rank++;
+    }
+}
+
 popupSet();
 createPuzzleGrid(words);
 placeWordList(words);
+setUserRanking(userNickNames, userRecords);
