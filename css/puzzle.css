@@ -4,6 +4,46 @@ body {
     background-color: white;
 }
 
+.puzzle_popup {
+    width:  80vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 30%;
+    left: 30%;
+}
+
+.popup_top {
+    width: 40vh;
+}  
+
+.puzzle_popup {
+    width: 40vh;
+}
+
+.popup_top > input {
+    width: 300px;
+    height: 50px;
+}
+
+.puzzle_popup .popup_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.puzzle_popup button {
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+    background-color: aqua;
+}
+
 .container_wrapper {
     display: flex;
     flex-direction: row;
@@ -23,9 +63,7 @@ body {
     justify-content: center;
     margin-bottom: 40px;
     padding: 20px;
-    /* background-color: #fff; */
     border-radius: 5px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 .container h2 {
