@@ -2,6 +2,14 @@ const words = ["LEONARD", "HOWARD", "PENNY", "AMY", "THEORY", "RAJESH", "SHELDON
 const puzzleContainer = document.getElementById("puzzle-container");
 let wordListSelector = document.querySelector(".word_list");
 
+function placeWordList(words) {
+    for (let i = 0; i < words.length; i++) {
+        const newDivElement = document.createElement('div');
+        newDivElement.innerHTML = words[i];
+        wordListSelector.appendChild(newDivElement);
+    }
+}
+
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -56,3 +64,4 @@ function getRandomAlphabet() {
 }
 
 createPuzzleGrid(words);
+placeWordList(words);
