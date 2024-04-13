@@ -22,7 +22,6 @@ header {
     justify-content: space-between;
 }
 
-
 .header_wrapper_right {
     width: 400px;
     display: flex;
@@ -36,14 +35,9 @@ header {
     text-decoration: none;
 }
 
-
-
 .header_wrapper_bottom {
     width: 90vw;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
+    margin-bottom: 20px;
 }
 
 .header_line {
@@ -54,11 +48,12 @@ header {
     margin-bottom: 20px;
 }
 
-
 .header_bottom_content {
     text-align: center;
 }
 
-
-
-
+.header_game_play_button {
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+}
