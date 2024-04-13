@@ -1,6 +1,15 @@
 const words = ["LEONARD", "HOWARD", "PENNY", "AMY", "THEORY", "RAJESH", "SHELDON", "SCIENCE", "PHYSICS", "COMICBOOK"];
 const puzzleContainer = document.getElementById("puzzle-container");
 let wordListSelector = document.querySelector(".word_list");
+let timerSelector = document.querySelector(".timer");
+let seconds = 1;
+
+function gameStart() {
+    setInterval(() => {
+        seconds = seconds+ 1;
+        timerSelector.textContent = String(seconds).padStart(2,"0");
+    }, 1000);                                                                                                                                                                                                  
+}
 
 function placeWordList(words) {
     for (let i = 0; i < words.length; i++) {
@@ -65,3 +74,4 @@ function getRandomAlphabet() {
 
 createPuzzleGrid(words);
 placeWordList(words);
+gameStart();
