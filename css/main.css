@@ -1,10 +1,10 @@
 main {
     width: 90vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;    
+    justify-content: flex-start;
 }
 
 form {
@@ -22,6 +22,7 @@ input {
     width:86vw;
     margin-bottom: 10px;
     border: 1px solid gray;
+    background-color: gainsboro;
 }
 
 #description-input {
@@ -32,10 +33,10 @@ input {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
-.row0, .row1, .row2, .row3, .row4, .row5 {
+.col0, .col1, .col2, .col3, .col4, .col5 {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -51,13 +52,14 @@ input {
     width:17.2vw;
     height:3vh;
     border: 1px solid gray;
+    background-color: gainsboro;
 }
 
 button {
     margin-top: 20px;
     width: 86.7vw;
     height: 5vh;
-    background-color: yellow;
+    background-color: orange;
     border: none;
     border-radius: 4px;
 }
