@@ -2,7 +2,26 @@ const words = ["LEONARD", "HOWARD", "PENNY", "AMY", "THEORY", "RAJESH", "SHELDON
 const puzzleContainer = document.getElementById("puzzle-container");
 let wordListSelector = document.querySelector(".word_list");
 let timerSelector = document.querySelector(".timer");
+let popupSelector = document.querySelector(".puzzle_popup");
+let startButtonSelector  = document.querySelector(".game_start");
+let exitButtonSelector = document.querySelector(".game_exit");
 let seconds = 1;
+
+exitButtonSelector.addEventListener('click', ()=> {
+    location.href = "main.html";
+});
+
+startButtonSelector.addEventListener('click', ()=> {
+    popupSelector.style.display = "none";
+    document.body.style.backgroundColor = "white";
+    gameStart();
+});
+
+function popupSet() {
+    popupSelector.style.backgroundColor = "white";
+    document.body.style.backgroundColor = "gray";
+
+}
 
 function gameStart() {
     setInterval(() => {
@@ -72,6 +91,6 @@ function getRandomAlphabet() {
     return alphabet[Math.floor(Math.random() * alphabet.length)];
 }
 
+popupSet();
 createPuzzleGrid(words);
 placeWordList(words);
-gameStart();
