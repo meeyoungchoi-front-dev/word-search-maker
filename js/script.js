@@ -10,6 +10,8 @@ let popupSelector = document.querySelector(".puzzle_popup");
 let startButtonSelector  = document.querySelector(".game_start");
 let exitButtonSelector = document.querySelector(".game_exit");
 let userRankingSelector = document.querySelector(".user_ranking");
+let userNickNameSelector = document.querySelector("#user_nickname");
+let playingUserNickName = "";
 let seconds = 1;
 
 exitButtonSelector.addEventListener('click', ()=> {
@@ -19,11 +21,11 @@ exitButtonSelector.addEventListener('click', ()=> {
 startButtonSelector.addEventListener('click', ()=> {
     popupSelector.style.display = "none";
     document.body.style.backgroundColor = "white";
-    gameStart();
-    
+    gameStart();  
 });
 
 function popupSet() {
+    playingUserNickName = userNickNameSelector.innerHTML;
     popupSelector.style.backgroundColor = "white";
     document.body.style.backgroundColor = "gray";
     setUserRanking(userNickNames, userRecords);
@@ -134,6 +136,7 @@ puzzleLetterSelectors.forEach(draggable => {
 
 function checkPuzzleAnswer(userDragData) {
     let answer = "";
+    let answerCount = 0;
     // puzzle-letter className div를 드래그 하는 이벤트를 발생시킨다
     // 이벤트가 발생된 div의 색을 변경한다
     // 이벤트가 종료되는 div까지 innerText를 변수에 저장한다 => 결과값
@@ -155,7 +158,14 @@ function checkPuzzleAnswer(userDragData) {
     for (let i = 0; i < wordsArrays.length; i++) {
         if (answer == wordsArrays[i].innerHTML) {
             wordsArrays[i].innerHTML.style.backgroundColor = "gray";
+            answerCount+=1;
         }
+    }
+
+    if (answerCount == wordsArrays.lenght) {
+        alert(playingUserNickName + "님 퍼즐을 다 풀었습니다\n " + "퍼즐 푸는데 걸린시간: " + seconds);
+        userNickNames.push(playingUserNickName);
+        userRecords.push(seconds);
     }
 }
 
