@@ -8,6 +8,8 @@ const descriptionInputSelector = document.querySelector("#description-input");
 
 const wordInputAllSelector = document.querySelectorAll(".word-input-div");
 let wordInputArray = [];
+let puzzleTitle;
+let puzzleDescription;
 
 // word-submit-button 클릭했을때 input에 입력한 데이터 전부 가져오기
 const wordSubmitButton = document.querySelector(".word-submit-button");
@@ -17,20 +19,11 @@ wordSubmitButton.addEventListener("click", (event) => {
     wordInputArray.push(inputData.value);
     console.log(inputData.value);
   }
-  const puzzleTitle = titleInputSelector.value;
-  const puzzleDescription = descriptionInputSelector.value;
+  puzzleTitle = titleInputSelector.value;
+  puzzleDescription = descriptionInputSelector.value;
   console.log("title: " + puzzleTitle);
   console.log("description: " + puzzleDescription);
-})
-
-
-
-
-
-
-
-
-
+});
 
 
 
