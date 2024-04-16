@@ -7,7 +7,6 @@ main {
     justify-content: flex-start;
 }
 
-
 form {
     display: flex;
     flex-direction: column;
@@ -49,7 +48,7 @@ input {
 }
 
 .word-input-div {
-    width:17.2vw;
+    width:16.3vw;
     height:3vh;
     border: 1px solid gray;
     background-color: gainsboro;

@@ -18,7 +18,7 @@
 - 게임완료후 닉네임과 시간 데이터를 배열에 저장하여 div에 렌더링
 
 ### 추가적으로 개발이 필요한 부분
-- svelte를 사용하여 html 컴포넌트화 시키기
+- svelte를 사용하여 html 컴포넌트화 시키기 [진행중]
 - mock array data를 firebase에 저장하기
 - firebase 데이터를 html에 렌더링 시키기
   
