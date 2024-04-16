@@ -24,6 +24,3 @@ wordSubmitButton.addEventListener("click", (event) => {
   console.log("title: " + puzzleTitle);
   console.log("description: " + puzzleDescription);
 });
-
-
-
